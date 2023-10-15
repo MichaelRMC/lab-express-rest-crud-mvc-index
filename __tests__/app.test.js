@@ -27,7 +27,7 @@ describe("Basic Express app", () => {
     expect(response.text).toEqual("Hello, world!");
   });
 
-  if (process.env.CIRCLECI) {
+  if (process.env.CI) {
     it("does not have a .env file", () => {
       expect(fs.existsSync("./.env")).toEqual(false);
     });
